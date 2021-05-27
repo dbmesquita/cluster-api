@@ -1,4 +1,4 @@
-version: '3'
+version: '3' 
 
 services:
   nginx:
@@ -16,25 +16,25 @@ services:
 
   api01:
     build: ./api
-     ports: 
-        - "3001:3000"
+    ports: 
+       - "3001:3000"
       networks:
       - nginx-network
   api02:
     build: ./api
-      ports: 
+    ports: 
         - "3002:3000"
       networks:
       - nginx-network
   api03:
     build: ./api
-      ports: 
+    ports: 
         - "3003:3000"
      networks:
       - nginx-network
   api04:
     build: ./api
-      ports: 
+    ports: 
         - "3004:3000"
       networks:
       - nginx-network
