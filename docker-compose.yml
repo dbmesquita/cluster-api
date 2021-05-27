@@ -1,0 +1,27 @@
+version: '1'
+services:
+api1:
+  build: ./api1
+    ports:
+      - "3001:3000"
+api2:
+  build: ./api2
+    ports:
+      - "3002:3000"
+api3:
+  build: ./api3
+    ports:
+      - "3003:3000"
+api4:
+  build: ./api4
+    ports:
+      - "3004:3000"
+nginx:
+build: ./nginx
+ports:
+- "8000:80"
+depends_on:
+- api1
+- api2
+- api3
+- api4
