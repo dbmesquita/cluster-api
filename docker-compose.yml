@@ -1,44 +1,43 @@
-version: '3' 
-
+version: "3"
 services:
   nginx:
     build: ./nginx
-    ports: 
-    - "8000:80"
-  depends_on:
-    - api01
-    - api02
-    - api03
-    - api04
+    ports:
+      - "8000:80"
+    depends_on:
+      - api01
+      - api02
+      - api03
+      - api04
 
-  networks:
-    - nginx-network
+    networks:
+      - nginx-network
 
   api01:
     build: ./api
-    ports: 
-       - "3001:3000"
-      networks:
+    ports:
+      - "3001:3000"
+    networks:
       - nginx-network
   api02:
     build: ./api
-    ports: 
-        - "3002:3000"
-      networks:
+    ports:
+      - "3002:3000"
+    networks:
       - nginx-network
   api03:
     build: ./api
-    ports: 
-        - "3003:3000"
-     networks:
+    ports:
+      - "3003:3000"
+    networks:
       - nginx-network
   api04:
     build: ./api
-    ports: 
-        - "3004:3000"
-      networks:
+    ports:
+      - "3004:3000"
+    networks:
       - nginx-network
 
-networks: 
-        nginx-network:
-          driver: bridge
+networks:
+  nginx-network:
+    driver: bridge
