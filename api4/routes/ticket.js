@@ -31,7 +31,6 @@ router.get('/:cgc', (req, res, next) =>{
            }
           )
       });   
-
 });
 
 
